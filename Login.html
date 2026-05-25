@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Login - Tagalog Learning Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        .login-container {
+            display: flex;
+            background: #ffffff;
+            width: 800px;
+            height: 450px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        /* Left Panel - Feature Image */
+        .login-side-img {
+            flex: 1;
+            background: url('images/One.jpg') center center;
+            background-size: cover;
+            position: relative;
+        }
+        .login-side-img::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(30, 60, 114, 0.3);
+        }
+        /* Right Panel - Form */
+        .login-form-panel {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .login-form-panel h2 {
+            color: #1e3c72;
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+        }
+        .login-form-panel p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #444;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-color: #2a5298;
+        }
+        .submit-btn {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background-color: #e68a00;
+        }
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-home a {
+            color: #2a5298;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .back-home a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-side-img"></div>
+
+        <div class="login-form-panel">
+            <h2>Portal Sign-In</h2>
+            <p>Access your workspace & assignments</p>
+
+            <form action="dashboard.html" method="GET">
+                <div class="input-group">
+                    <label for="account-type">Select Account</label>
+                    <select id="account-type" name="role" required>
+                        <option value="student">Michael (Student Account)</option>
+                        <option value="admin">Guro Mary (Instructor/Admin)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Enter Portal</button>
+            </form>
+
+            <div class="back-home">
+                <a href="index.html">← Back to Welcome Page</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
