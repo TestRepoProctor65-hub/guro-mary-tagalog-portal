@@ -5,194 +5,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guro Mary's Tagalog Learning Portal</title>
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #f9f6f0;
-            color: #333;
-        }
-
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+            background-color: #fcfbf7;
+            margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
-        /* Header / Welcome Banner */
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #ffffff;
+        .header-banner {
+            background-color: #2b579a;
+            color: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 30px 20px;
             text-align: center;
-            padding: 40px 20px;
             border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .header-banner h1 {
+            margin: 0;
+            font-size: 2.2rem;
             font-weight: 700;
         }
-
-        /* Interactive Showcase Row */
-        .showcase-row {
+        .main-card {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        .flag-box {
+            width: 180px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            margin-bottom: 30px;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        /* Left Side: Flag */
-        .left-column {
-            flex: 1;
-            display: flex;
             justify-content: center;
         }
-        .flag-img {
-            width: 160px;
+        .flag-box img {
+            width: 100%;
             height: auto;
             border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
-        /* Center Side: Profile Pic */
-        .center-column {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
+        .profile-circle-container {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 5px solid #f9f6f0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border: 6px solid #f5f0e1;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.05), 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #fafaf8;
         }
-
-        /* Right Side: Login & Clock Controls */
-        .right-column {
-            flex: 1;
+        .profile-circle-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .action-box {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 15px;
+            width: 180px;
         }
-        
-        /* Login Button Styling */
         .login-btn {
-            background-color: #ff9800;
+            background-color: #ff9900;
             color: white;
-            border: none;
-            padding: 10px 25px;
-            font-size: 1rem;
+            text-decoration: none;
+            padding: 12px 35px;
             font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-            transition: background 0.2s ease;
-            text-transform: uppercase;
-            width: 140px;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, background-color 0.2s;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
         .login-btn:hover {
             background-color: #e68a00;
+            transform: translateY(-2px);
         }
-
-        /* Digital Clock Styling */
-        .digital-clock {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #222;
+        .clock-display {
+            background-color: #1a1a1a;
             color: #00ffcc;
-            padding: 8px 12px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 12px;
             border-radius: 6px;
-            font-size: 0.9rem;
             text-align: center;
-            box-shadow: inset 0 0 5px rgba(0,0,0,0.8);
-            min-width: 160px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
         }
-
-        /* Introduction / Content */
-        .intro-text {
-            background-color: #ffffff;
+        .quote-card {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            border-left: 5px solid #2a5298;
+            border-left: 6px solid #2b579a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+            margin-bottom: 40px;
         }
-        .intro-text p {
+        .quote-tagalog {
             font-size: 1.25rem;
-            color: #4a4a4a;
             font-style: italic;
-        }
-
-        /* Footer */
-        footer {
+            color: #1e3a8a;
+            font-weight: 600;
+            margin-bottom: 8px;
             text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 0.9rem;
+        }
+        .quote-english {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .quote-author {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #333;
+            text-align: right;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        footer {
             color: #777;
+            font-size: 0.85rem;
+            text-align: center;
+            width: 100%;
             border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+            max-width: 800px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Welcome to Guro Mary's Tagalog Webpage</h1>
-        </header>
+    <div class="header-banner">
+        <h1>Welcome to Guro Mary's Tagalog Webpage</h1>
+    </div>
 
-        <div class="showcase-row">
-            
-            <div class="left-column">
-                <img src="images/flag.jpg" alt="Philippine Flag" class="flag-img">
-            </div>
-
-            <div class="center-column">
-                <img src="images/Mary_profile.jpg" alt="Guro Mary in her class" class="profile-img">
-            </div>
-
-            <div class="right-column">
-                <a href="Login.html"><button class="login-btn">Log In</button></a>
-                <div class="digital-clock" id="clock">Loading...</div>
-            </div>
-
+    <div class="main-card">
+        <div class="flag-box">
+            <img src="Images/flag.png" alt="Philippine Flag" onerror="this.src='https://flagcdn.com/w320/ph.png'">
         </div>
 
-        <main class="intro-text">
-            <p>"I will offer interactive lessons on how to speak and pronounce basic Tagalog words and phrases."</p>
-        </main>
+        <div class="profile-circle-container">
+            <img src="Images/Mary_profile.jpg" alt="Guro Mary" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#777;font-size:0.9rem;text-align:center;padding:10px;\'>Guro Mary</span>'">
+        </div>
 
-        <footer>
-            <p>&copy; 2026 Guro Mary's Tagalog Learning Portal. All rights reserved.</p>
-        </footer>
+        <div class="action-box">
+            <a href="Login.html" class="login-btn">LOG IN</a>
+            <div id="live-clock" class="clock-display">Loading...</div>
+        </div>
     </div>
+
+    <div class="quote-card">
+        <div class="quote-tagalog">"Ang kabataan ang pag-asa ng bayan."</div>
+        <div class="quote-english">"The youth is the hope of the nation."</div>
+        <div class="quote-author">— Dr. José Rizal</div>
+    </div>
+
+    <footer>
+        &copy; 2026 Guro Mary's Tagalog Learning Portal. All rights reserved.
+    </footer>
 
     <script>
         function updateClock() {
             const now = new Date();
-            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-            const dateStr = now.toLocaleDateString(undefined, options);
-            const timeStr = now.toLocaleTimeString();
-            document.getElementById('clock').innerHTML = `${dateStr}<br>${timeStr}`;
+            const optionsDate = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            
+            const dateStr = now.toLocaleDateString('en-US', optionsDate);
+            const timeStr = now.toLocaleTimeString('en-US', optionsTime);
+            
+            document.getElementById('live-clock').innerHTML = `${dateStr}<br>${timeStr}`;
         }
-        updateClock();
         setInterval(updateClock, 1000);
+        updateClock();
     </script>
-
 </body>
 </html>
